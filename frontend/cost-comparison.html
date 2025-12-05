@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cost Comparison</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2d3436;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .comparison-table th {
+            background: #2d3436;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        .b2-row {
+            background: #e8f5e8;
+            font-weight: bold;
+        }
+        .savings-badge {
+            background: #00b894;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-align: center;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        .btn {
+            background: #fd79a8;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #e84393;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💰 Cost Comparison</h1>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Storage Cost (per GB/month)</th>
+                    <th>Download Cost (per GB)</th>
+                    <th>First 10GB</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="b2-row">
+                    <td><strong>Backblaze B2</strong></td>
+                    <td>$0.005</td>
+                    <td>$0.01</td>
+                    <td>FREE 🎉</td>
+                </tr>
+                <tr>
+                    <td>AWS S3</td>
+                    <td>$0.023</td>
+                    <td>$0.09</td>
+                    <td>Paid</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center;">
+            <div class="savings-badge">💡 Savings: 75% cheaper than AWS S3!</div>
+            <br>
+            <button class="btn" onclick="location.href='index.html'">← Back to Home</button>
+        </div>
+    </div>
+</body>
+</html>

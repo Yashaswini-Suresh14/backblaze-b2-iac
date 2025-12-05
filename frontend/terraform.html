@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terraform Configuration</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .code-container {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 25px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+            border-left: 4px solid #007acc;
+        }
+        .keyword { color: #569cd6; }
+        .string { color: #ce9178; }
+        .number { color: #b5cea8; }
+        .comment { color: #6a9955; }
+        .btn {
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Terraform Configuration</h1>
+        <div class="code-container">
+<span class="comment"># main.tf - Backblaze B2 Bucket</span>
+<span class="keyword">resource</span> <span class="string">"backblaze_b2_bucket"</span> <span class="string">"main"</span> {
+  bucket_name = <span class="string">"my-app-bucket"</span>
+  lifecycle_rules {
+    file_name_prefix = <span class="string">""</span>
+    days_from_uploading_to_hiding = <span class="number">30</span>
+    days_from_hiding_to_deleting   = <span class="number">60</span>
+  }
+}
+
+<span class="comment"># providers.tf</span>
+<span class="keyword">terraform</span> {
+  required_providers {
+    backblaze = {
+      source = <span class="string">"Backblaze/b2"</span>
+      version = <span class="string">"0.8.0"</span>
+    }
+  }
+}
+        </div>
+        <button class="btn" onclick="location.href='index.html'">← Back to Home</button>
+    </div>
+</body>
+</html>
