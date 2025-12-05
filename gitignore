@@ -1,0 +1,40 @@
+@'
+# Terraform files
+**/.terraform/*
+**/terraform.tfstate*
+**/.terraform.tfstate.lock.info
+**/terraform.tfstate.backup
+**/*.tfvars
+**/*.tfvars.json
+
+# Backblaze B2 configuration (sensitive)
+terraform/config.auto.tfvars
+terraform/test.tfvars
+
+# Local deployment files
+**/plan.out
+**/.terraform.lock.hcl
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Log files
+*.log
+terraform.log
+
+# Node modules (if adding build process)
+node_modules/
+npm-debug.log*
+
+# Build outputs
+dist/
+build/
+'@ | Out-File -FilePath .gitignore -Encoding UTF8
